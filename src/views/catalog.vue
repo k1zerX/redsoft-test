@@ -74,7 +74,7 @@ export default {
 .rs-catalog {
   &__title {
     margin-top: 45px;
-    margin-bottom: 7px;
+    margin-bottom: 39px;
   }
 
   &__content {
@@ -83,7 +83,7 @@ export default {
     justify-content: space-between;
 
     &-painting-card {
-      margin-top: 32px;
+      margin-bottom: 32px;
     }
   }
 }

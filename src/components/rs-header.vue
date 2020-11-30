@@ -3,12 +3,15 @@
 header(
   block="rs-header"
 )
-  rs-nav-bar(
-    :routes="routes"
+  div(
+    elem="wrapper"
   )
-  rs-search-form(
-    placeholder="Поиск по названию картины"
-  )
+    rs-nav-bar(
+      :routes="routes"
+    )
+    rs-search-form(
+      placeholder="Поиск по названию картины"
+    )
 
 </template>
 
@@ -33,6 +36,7 @@ export default {
 <style lang="scss">
 
 .rs-header {
+  --width: var(--rs-header-width);
   --height: var(--rs-header-height);
   --padding: var(--rs-header-padding);
 
@@ -41,8 +45,15 @@ export default {
   border-bottom: 1px solid var(--rs-color-neutral);
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    width: var(--width);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 </style>

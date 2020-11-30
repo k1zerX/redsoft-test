@@ -69,6 +69,9 @@ export default {
 
 <style lang="scss">
 
+$screen-lg: 1200px;
+$rs-page-horizontal-padding: 24px;
+
 :root {
   --rs-color-primary: #5b3a32;
   --rs-color-on-primary: #f4f6f9;
@@ -82,10 +85,11 @@ export default {
   --rs-color-neutral-text: #9f9f9f;
   --rs-color-neutral-active: #b5b5b5;
 
-  @media only screen and (min-width: 1200px) {
-    --rs-page-padding: 0 352px;
-    --rs-page-padding: 0 24px;
-
+  @media only screen and (min-width: $screen-lg) {
+    --rs-page-padding: 0 #{$rs-page-horizontal-padding};
+    --rs-page-width: #{$screen-lg - $rs-page-horizontal-padding * 2};
+    --rs-header-width: var(--rs-page-width);
+    --rs-footer-width: var(--rs-page-width);
     --rs-header-height: 96px;
     --rs-footer-height: 96px;
     --rs-header-padding: var(--rs-page-padding);
@@ -142,34 +146,12 @@ export default {
   }
 }
 
-h1 {
-  @extend .h1;
-  color: var(--rs-color-on-background);
-}
-
-h2 {
-  @extend .h2;
-  color: var(--rs-color-on-background);
-}
-
-h3 {
-  @extend .h3;
-  color: var(--rs-color-on-background);
-}
-
-h4 {
-  @extend .h4;
-  color: var(--rs-color-on-background);
-}
-
-h5 {
-  @extend .h5;
-  color: var(--rs-color-on-background);
-}
-
-h6 {
-  @extend .h6;
-  color: var(--rs-color-on-background);
+@for $i from 1 to 6 {
+  h#{$i} {
+    @extend .h#{$i};
+    color: var(--rs-color-on-background);
+    -webkit-text-fill-color: var(--rs-color-on-background);
+  }
 }
 
 html, body {
@@ -195,6 +177,8 @@ body {
 
   &__content {
     grid-area: content;
+    justify-self: center;
+    width: var(--rs-page-width);
     padding: var(--rs-page-padding);
   }
 

@@ -43,8 +43,8 @@ export default {
 <style lang="scss">
 
 .rs-nav-bar {
-  height: var(--size);
   width: var(--size);
+  height: var(--size);
 
   --between-spacing: 48px;
 

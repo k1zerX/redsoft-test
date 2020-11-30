@@ -45,6 +45,7 @@ export default {
 
     &::placeholder {
       color: var(--rs-color-neutral-text);
+      -webkit-text-fill-color: var(--rs-color-neutral-text) !important;
     }
 
     &:focus {

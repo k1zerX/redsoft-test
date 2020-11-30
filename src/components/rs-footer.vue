@@ -3,13 +3,16 @@
 footer(
   block="rs-footer"
 )
-  rs-nav-bar(
-    :routes="routes"
-    dark="true"
+  div(
+    elem="wrapper"
   )
-  rs-contacts-bar(
-    :contacts="contacts"
-  )
+    rs-nav-bar(
+      :routes="routes"
+      dark="true"
+    )
+    rs-contacts-bar(
+      :contacts="contacts"
+    )
 
 </template>
 
@@ -35,6 +38,7 @@ export default {
 <style lang="scss">
 
 .rs-footer {
+  --width: var(--rs-footer-width);
   --height: var(--rs-footer-height);
   --padding: var(--rs-footer-padding);
 
@@ -44,8 +48,15 @@ export default {
   color: var(--rs-color-on-secondary);
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    width: var(--width);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 </style>
